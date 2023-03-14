@@ -1,6 +1,5 @@
-using System.Net;
-using FeedbackBros.SuperRetro_1_0.Functionality.ServiceToSolution.AgentInPrivate.SuperRetro.ManageRetrospectives_bundle.IWantToBeAbleToAddNewRetrospective_group;
 using FeedbackBros.SuperRetro.SuperRetro.Retrospective;
+using hackaton_super_retro.Builders;
 using Microsoft.AspNetCore.Mvc;
 using Uniscale.Core;
 using Uniscale.Designtime;
@@ -11,13 +10,14 @@ namespace hackaton_super_retro.Controllers;
 [Route("[controller]")]
 public class RetroController : ControllerBase
 {
-    private readonly List<RetrospectiveInstance> _retrospectives;
+    private readonly List<RetrospectiveData> _retrospectives;
+    private readonly List<User> _users;
     private readonly ILogger<RetroController> _logger;
 
     public RetroController(ILogger<RetroController> logger)
     {
         _logger = logger;
-        _retrospectives = new List<RetrospectiveInstance>();
+        _retrospectives = new List<RetrospectiveData>();
     }
 
     [HttpPost(Name = "Request")]
@@ -25,14 +25,19 @@ public class RetroController : ControllerBase
     {
         var session = await Platform.Builder()
             // Set up an interceptor for the feature that returns a new task from the input
-            .WithInterceptors(i => i
-                .InterceptRequest(NewRetrospective.AllFeatureUsages, NewRetrospective.Handler((input, _) =>
+            .WithInterceptors(i =>
                 {
-                    var newRetro = new RetrospectiveInstance
-                        { RetrospectiveInstanceIdentifier = Guid.NewGuid(), Name = input.Name };
-                    _retrospectives.Add(newRetro);
-                    return newRetro.RetrospectiveInstanceIdentifier;
-                }))
+                    ManageRetrospective.Setup(i, _retrospectives);
+                    ManageUser.Setup(i, _users);
+                    
+                    RetrospectiveAction.Setup(i, _retrospectives);
+                    RetrospectiveAttendee.Setup(i, _retrospectives, _users);
+                    RetrospectiveFeedback.Setup(i, _retrospectives);
+                    RetrospectiveImprovementIdea.Setup(i, _retrospectives);
+                    
+                    RetrospectiveRead.Setup(i, _retrospectives, _users);
+                }
+        
             )
             .Build();
 
