@@ -1,3 +1,4 @@
+using System.Text.Json;
 using FeedbackBros.SuperRetro.SuperRetro.Retrospective;
 using hackaton_super_retro.Builders;
 using Microsoft.AspNetCore.Mvc;
@@ -21,7 +22,7 @@ public class RetroController : ControllerBase
     }
 
     [HttpPost(Name = "Request")]
-    public async Task<Result> Post([FromBody] GatewayRequest request)
+    public async Task<Result> Post([FromBody] JsonDocument requestobj)
     {
         var session = await Platform.Builder()
             // Set up an interceptor for the feature that returns a new task from the input
@@ -41,6 +42,12 @@ public class RetroController : ControllerBase
             )
             .Build();
 
+        var request = requestobj.Deserialize<GatewayRequest>(new JsonSerializerOptions
+        {
+            PropertyNamingPolicy = JsonNamingPolicy.CamelCase,
+            WriteIndented = true,
+            PropertyNameCaseInsensitive = true
+        });
         return await session.AcceptGatewayRequest(request);
     }
 }
