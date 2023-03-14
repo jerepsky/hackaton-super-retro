@@ -28,28 +28,25 @@ public static class RetrospectiveRead
             {
                 var retro = retrospectives.Find(r =>
                     r.RetrospectiveInstanceIdentifier == input);
-                if(retro == null)
-                    return Result<List<Feedback>>.BadRequest(ErrorCodes.SuperRetro.NotFound);
-                
-                return Result<List<Feedback>>.Ok(retro.Feedback);
+                return retro == null 
+                    ? Result<List<Feedback>>.BadRequest(ErrorCodes.SuperRetro.NotFound) 
+                    : Result<List<Feedback>>.Ok(retro.Feedback);
             }))
             .InterceptRequest(GetImprovementIdeas.AllFeatureUsages, GetImprovementIdeas.Handler((input, _) =>
             {
                 var retro = retrospectives.Find(r =>
                     r.RetrospectiveInstanceIdentifier == input);
-                if(retro == null)
-                    return Result<List<ImprovementIdea>>.BadRequest(ErrorCodes.SuperRetro.NotFound);
-                
-                return Result<List<ImprovementIdea>>.Ok(retro.ImprovementIdeas);
+                return retro == null 
+                    ? Result<List<ImprovementIdea>>.BadRequest(ErrorCodes.SuperRetro.NotFound) 
+                    : Result<List<ImprovementIdea>>.Ok(retro.ImprovementIdeas);
             }))
             .InterceptRequest(GetActions.AllFeatureUsages, GetActions.Handler((input, _) =>
             {
                 var retro = retrospectives.Find(r =>
                     r.RetrospectiveInstanceIdentifier == input);
-                if(retro == null)
-                    return Result<List<Action>>.BadRequest(ErrorCodes.SuperRetro.NotFound);
-                
-                return Result<List<Action>>.Ok(retro.Actions);
+                return retro == null 
+                    ? Result<List<Action>>.BadRequest(ErrorCodes.SuperRetro.NotFound) 
+                    : Result<List<Action>>.Ok(retro.Actions);
             }))
             .InterceptRequest(GetRetrospective.AllFeatureUsages, GetRetrospective.Handler((input, _) =>
             {
