@@ -5,7 +5,7 @@ namespace HackathonSuperRetro.Models;
 
 public class RetrospectiveData : RetrospectiveInstance
 {
-    public readonly List<Feedback> Feedback = new List<Feedback>();
-    public readonly List<ImprovementIdea> ImprovementIdeas = new List<ImprovementIdea>();
-    public readonly List<Action> Actions = new List<Action>();
+    public readonly List<Feedback> Feedback = new();
+    public readonly List<ImprovementIdea> ImprovementIdeas = new();
+    public readonly List<Action> Actions = new();
 }
