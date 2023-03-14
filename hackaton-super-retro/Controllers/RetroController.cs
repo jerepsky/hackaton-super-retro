@@ -21,7 +21,7 @@ public class RetroController : ControllerBase
     }
 
     [HttpPost(Name = "Request")]
-    public async Task<Result> Post([FromBody] string request)
+    public async Task<Result> Post([FromBody] GatewayRequest request)
     {
         var session = await Platform.Builder()
             // Set up an interceptor for the feature that returns a new task from the input
