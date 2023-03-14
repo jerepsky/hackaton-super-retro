@@ -9,7 +9,7 @@ using Uniscale.Core;
 using Uniscale.Designtime;
 using Xunit;
 
-namespace HackatonTest;
+namespace HackathonTest;
 
 public class UnitTest1
 {

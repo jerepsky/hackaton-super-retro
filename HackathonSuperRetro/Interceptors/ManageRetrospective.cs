@@ -3,10 +3,10 @@ using FeedbackBros.SuperRetro_1_0.Functionality.ServiceToSolution.AgentInPrivate
 using FeedbackBros.SuperRetro_1_0.Functionality.ServiceToSolution.AgentInPrivate.SuperRetro.ManageRetrospectives_bundle.IWantToBeAbleToRemoveRetrospective_group;
 using FeedbackBros.SuperRetro_1_0.Functionality.ServiceToSolution.AgentInPrivate.SuperRetro.ManageRetrospectives_bundle.IWantToBeAbleToUpdateRetrospective_group;
 using FeedbackBros.SuperRetro.SuperRetro;
-using hackaton_super_retro.Models;
+using HackathonSuperRetro.Models;
 using Uniscale.Core;
 
-namespace hackaton_super_retro.Builders;
+namespace HackathonSuperRetro.Interceptors;
 
 public static class ManageRetrospective
 {

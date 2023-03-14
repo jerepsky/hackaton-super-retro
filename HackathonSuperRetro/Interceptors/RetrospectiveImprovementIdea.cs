@@ -4,10 +4,10 @@ using FeedbackBros.SuperRetro_1_0.Functionality.ServiceToSolution.AgentInPrivate
 using FeedbackBros.SuperRetro_1_0.Functionality.ServiceToSolution.AgentInPrivate.SuperRetro.Retrospective.WhatCanWeImprove_bundle.IWantToBeAbleToRemoveImprovementIdeas_group;
 using FeedbackBros.SuperRetro.SuperRetro;
 using FeedbackBros.SuperRetro.SuperRetro.Retrospective;
-using hackaton_super_retro.Models;
+using HackathonSuperRetro.Models;
 using Uniscale.Core;
 
-namespace hackaton_super_retro.Builders;
+namespace HackathonSuperRetro.Interceptors;
 
 public static class RetrospectiveImprovementIdea
 {

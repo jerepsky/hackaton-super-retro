@@ -6,7 +6,7 @@ using FeedbackBros.SuperRetro.SuperRetro;
 using FeedbackBros.SuperRetro.SuperRetro.Retrospective;
 using Uniscale.Core;
 
-namespace hackaton_super_retro.Builders;
+namespace HackathonSuperRetro.Interceptors;
 
 public static class ManageUser
 {

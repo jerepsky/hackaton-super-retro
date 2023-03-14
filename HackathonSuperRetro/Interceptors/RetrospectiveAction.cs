@@ -3,11 +3,11 @@ using FeedbackBros.SuperRetro_1_0.Functionality.ServiceToSolution.AgentInPrivate
 using FeedbackBros.SuperRetro_1_0.Functionality.ServiceToSolution.AgentInPrivate.SuperRetro.Retrospective.WhatActionsWillFollow_bundle.IWantToBeAbleToDeleteActions_group;
 using FeedbackBros.SuperRetro_1_0.Functionality.ServiceToSolution.AgentInPrivate.SuperRetro.Retrospective.WhatActionsWillFollow_bundle.IWantToBeAbleToUpdateActions_group;
 using FeedbackBros.SuperRetro.SuperRetro;
-using hackaton_super_retro.Models;
+using HackathonSuperRetro.Models;
 using Uniscale.Core;
 using Action = FeedbackBros.SuperRetro.SuperRetro.Retrospective.Action;
 
-namespace hackaton_super_retro.Builders;
+namespace HackathonSuperRetro.Interceptors;
 
 public static class RetrospectiveAction
 {

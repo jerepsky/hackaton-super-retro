@@ -2,11 +2,11 @@ using FeedbackBros.SuperRetro;
 using FeedbackBros.SuperRetro_1_0.Functionality.ServiceToSolution.AgentInPrivate.SuperRetro.Retrospective.ViewRetrospective_bundle.IWantToGetRetrospectiveInfo_group;
 using FeedbackBros.SuperRetro.SuperRetro;
 using FeedbackBros.SuperRetro.SuperRetro.Retrospective;
-using hackaton_super_retro.Models;
+using HackathonSuperRetro.Models;
 using Uniscale.Core;
 using Action = FeedbackBros.SuperRetro.SuperRetro.Retrospective.Action;
 
-namespace hackaton_super_retro.Builders;
+namespace HackathonSuperRetro.Interceptors;
 
 public static class RetrospectiveRead
 {

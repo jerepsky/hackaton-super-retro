@@ -1,11 +1,11 @@
 using FeedbackBros.SuperRetro.SuperRetro.Retrospective;
-using hackaton_super_retro.Builders;
-using hackaton_super_retro.Models;
+using HackathonSuperRetro.Interceptors;
+using HackathonSuperRetro.Models;
 using Microsoft.AspNetCore.Mvc;
 using Uniscale.Core;
 using Uniscale.Designtime;
 
-namespace hackaton_super_retro.Controllers;
+namespace HackathonSuperRetro.Controllers;
 
 [ApiController]
 [Route("[controller]")]
@@ -26,6 +26,7 @@ public class RetroController : ControllerBase
     public async Task<Result> Post([FromBody] GatewayRequest request)
     {
         var session = await Platform.Builder()
+            .OnLogMessage(message => _logger.Log(message.Level.ToInternal(), message.Message))
             .WithInterceptors(i =>
                 {
                     ManageRetrospective.Setup(i, _retrospectives);

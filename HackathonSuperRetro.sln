@@ -1,8 +1,8 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "hackaton-super-retro", "hackaton-super-retro\hackaton-super-retro.csproj", "{E8C87F22-6B7B-488F-855D-99C4CC7D8504}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HackathonSuperRetro", "HackathonSuperRetro\HackathonSuperRetro.csproj", "{E8C87F22-6B7B-488F-855D-99C4CC7D8504}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HackatonTest", "HackatonTest\HackatonTest.csproj", "{3A76DB56-EA5F-49E8-9D3F-3BF5D563F56E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HackathonTest", "HackathonTest\HackathonTest.csproj", "{3A76DB56-EA5F-49E8-9D3F-3BF5D563F56E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
