@@ -11,7 +11,7 @@ using Xunit;
 
 namespace HackathonTest;
 
-public class UnitTest1
+public class RetrospectiveHttpTests
 {
     private readonly HttpClient _httpClient = new() { BaseAddress = new Uri("http://localhost:5295/") };
 
@@ -31,7 +31,7 @@ public class UnitTest1
     }
 
     [Fact]
-    public async Task Test1()
+    public async Task Retrospective_GivenValidData_CanCreateAndGet()
     {
         var actorSceneSession = (await PlatformInit())
             .AsSolution(Guid.NewGuid(), ActorInScene.AgentInPrivateScene);
