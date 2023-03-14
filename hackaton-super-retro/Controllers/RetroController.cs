@@ -15,10 +15,11 @@ public class RetroController : ControllerBase
     private readonly List<User> _users;
     private readonly ILogger<RetroController> _logger;
 
-    public RetroController(ILogger<RetroController> logger)
+    public RetroController(ILogger<RetroController> logger, List<RetrospectiveData> retrospectives, List<User> users)
     {
         _logger = logger;
-        _retrospectives = new List<RetrospectiveData>();
+        _retrospectives = retrospectives;
+        _users = users;
     }
 
     [HttpPost(Name = "Request")]

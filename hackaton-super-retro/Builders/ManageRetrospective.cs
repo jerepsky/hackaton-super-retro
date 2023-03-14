@@ -16,14 +16,14 @@ public static class ManageRetrospective
             .InterceptRequest(NewRetrospective.AllFeatureUsages, NewRetrospective.Handler((input, _) =>
             {
                 var newRetro = new RetrospectiveData
-                    {RetrospectiveInstanceIdentifier = Guid.NewGuid(), Name = input.Name};
+                    { RetrospectiveInstanceIdentifier = Guid.NewGuid(), Name = input.Name };
                 retrospectives.Add(newRetro);
                 return newRetro.RetrospectiveInstanceIdentifier;
             }))
             .InterceptRequest(CreateOrReplaceRetrospective.AllFeatureUsages, CreateOrReplaceRetrospective.Handler((input, _) =>
             {
                 var newRetro = new RetrospectiveData
-                    {Name = input.Name, Attendees = input.Attendees};
+                    { Name = input.Name, Attendees = input.Attendees };
                 retrospectives.Add(newRetro);
                 return newRetro.RetrospectiveInstanceIdentifier;
             }))
@@ -44,7 +44,7 @@ public static class ManageRetrospective
                     retrospectives.Remove(retro);
                 
                 retrospectives.Add(new RetrospectiveData
-                    {RetrospectiveInstanceIdentifier = Guid.NewGuid(), Name = input.Name, Attendees = input.Attendees});
+                    { RetrospectiveInstanceIdentifier = Guid.NewGuid(), Name = input.Name, Attendees = input.Attendees });
                 
                 return new Empty();
             }))

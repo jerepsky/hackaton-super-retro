@@ -1,4 +1,6 @@
 using System.Text.Json;
+using FeedbackBros.SuperRetro.SuperRetro.Retrospective;
+using hackaton_super_retro.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -14,6 +16,9 @@ builder.Services.AddControllers()
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
+builder.Services.AddSingleton(new List<User>());
+builder.Services.AddSingleton(new List<RetrospectiveData>());
 
 var app = builder.Build();
 
