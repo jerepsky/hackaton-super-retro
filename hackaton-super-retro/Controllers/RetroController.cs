@@ -1,5 +1,6 @@
 using FeedbackBros.SuperRetro.SuperRetro.Retrospective;
 using hackaton_super_retro.Builders;
+using hackaton_super_retro.Models;
 using Microsoft.AspNetCore.Mvc;
 using Uniscale.Core;
 using Uniscale.Designtime;

@@ -1,7 +1,7 @@
 using FeedbackBros.SuperRetro.SuperRetro.Retrospective;
 using Action = FeedbackBros.SuperRetro.SuperRetro.Retrospective.Action;
 
-namespace hackaton_super_retro;
+namespace hackaton_super_retro.Models;
 
 public class RetrospectiveData : RetrospectiveInstance
 {

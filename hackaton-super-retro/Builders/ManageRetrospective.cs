@@ -3,7 +3,7 @@ using FeedbackBros.SuperRetro_1_0.Functionality.ServiceToSolution.AgentInPrivate
 using FeedbackBros.SuperRetro_1_0.Functionality.ServiceToSolution.AgentInPrivate.SuperRetro.ManageRetrospectives_bundle.IWantToBeAbleToRemoveRetrospective_group;
 using FeedbackBros.SuperRetro_1_0.Functionality.ServiceToSolution.AgentInPrivate.SuperRetro.ManageRetrospectives_bundle.IWantToBeAbleToUpdateRetrospective_group;
 using FeedbackBros.SuperRetro.SuperRetro;
-using FeedbackBros.SuperRetro.SuperRetro.Retrospective;
+using hackaton_super_retro.Models;
 using Uniscale.Core;
 
 namespace hackaton_super_retro.Builders;
