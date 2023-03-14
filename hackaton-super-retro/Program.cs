@@ -21,8 +21,6 @@ var app = builder.Build();
 app.UseSwagger();
 app.UseSwaggerUI();
 
-app.UseHttpsRedirection();
-
 app.UseAuthorization();
 
 app.MapControllers();
@@ -31,7 +29,7 @@ app.UseCors(x => x
     .AllowAnyMethod()
     .AllowAnyHeader()
     .SetIsOriginAllowed(origin => true) // allow any origin
-    //.WithOrigins("https://localhost:44351")); // Allow only this origin can also have multiple origins separated with comma
+    .WithOrigins("https://localhost:3000") // Allow only this origin can also have multiple origins separated with comma
     );
 
 app.Run();

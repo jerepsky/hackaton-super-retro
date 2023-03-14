@@ -41,10 +41,10 @@ public static class RetrospectiveFeedback
                 
                 return Result<Empty>.Ok(new Empty());
             }))
-            /*.InterceptRequest(RemoveFeedback.AllFeatureUsages, RemoveFeedback.Handler((input, _) =>
+            .InterceptRequest(RemoveFeedback.AllFeatureUsages, RemoveFeedback.Handler((input, _) =>
             {
                 var retro = retrospectives.Find(r =>
-                    r.RetrospectiveInstanceIdentifier == input.RetrospectiveIdentifier);
+                    r.RetrospectiveInstanceIdentifier == input.RetrospectiveInstanceIdentifier);
                 if(retro == null)
                     return Result<Empty>.BadRequest(ErrorCodes.SuperRetro.NotFound);
                 
@@ -55,6 +55,6 @@ public static class RetrospectiveFeedback
                 
                 retro.Feedback.Remove(feedback);
                 return Result<Empty>.Ok(new Empty());
-            }))*/;
+            }));
     }
 }
